@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página de Fans de Pink Floyd</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    .pink-floyd-font {
+        font-family: 'Press Start 2P', cursive;
+    }
+</style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header class="bg-pink-600 p-6 text-center shadow-lg">
+    <h1 class="text-5xl pink-floyd-font text-white">Pink Floyd</h1>
+    <nav class="mt-4">
+        <ul class="flex justify-center space-x-8 text-lg">
+        <li><a href="#about" class="hover:underline">Acerca de</a></li>
+        <li><a href="#albums" class="hover:underline">Álbumes</a></li>
+        <li><a href="#members" class="hover:underline">Miembros</a></li>
+        <li><a href="#gallery" class="hover:underline">Galería</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <!-- Acerca de -->
+    <section id="about" class="p-16 bg-gray-800 text-center">
+    <h2 class="text-4xl font-bold mb-6">Acerca de Pink Floyd</h2>
+    <p class="text-gray-300 leading-relaxed max-w-2xl mx-auto">Pink Floyd fue una banda de rock inglesa formada en Londres en 1965. Conocidos por su música progresiva y psicodélica, son una de las bandas más influyentes y exitosas en la historia de la música. Sus álbumes más icónicos incluyen "The Dark Side of the Moon" y "The Wall".</p>
+    </section>
+
+    <!-- Albums -->
+    <section id="albums" class="p-16 bg-gray-700 text-center">
+    <h2 class="text-4xl font-bold mb-6">Álbumes</h2>
+    <ul class="space-y-4 text-lg">
+        <li><strong>The Dark Side of the Moon</strong> (1973)</li>
+        <li><strong>Wish You Were Here</strong> (1975)</li>
+        <li><strong>Animals</strong> (1977)</li>
+        <li><strong>The Wall</strong> (1979)</li>
+        <li><strong>Division Bell</strong> (1994)</li>
+    </ul>
+    </section>
+
+    <!-- Miembros -->
+    <section id="members" class="p-16 bg-gray-800 text-center">
+    <h2 class="text-4xl font-bold mb-6">Miembros de la Banda</h2>
+    <ul class="space-y-4 text-lg">
+        <li><strong>Syd Barrett</strong> - Voz, Guitarra</li>
+        <li><strong>Roger Waters</strong> - Bajo, Voz</li>
+        <li><strong>David Gilmour</strong> - Guitarra, Voz</li>
+        <li><strong>Nick Mason</strong> - Batería</li>
+        <li><strong>Richard Wright</strong> - Teclados, Voz</li>
+    </ul>
+</section>
+
+<!-- Galería -->
+<section id="gallery" class="p-16 bg-gray-700 text-center">
+    <h2 class="text-4xl font-bold mb-6">Galería</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <img src="img/concerto-pink-floyd-venezia-1.webp" alt="Álbum 1" 
+                class="w-64 h-64 rounded-lg shadow-lg mx-auto transform hover:scale-105 transition duration-300">
+        <img src="img/Pink-Floyd (1).webp" alt="Álbum 2" 
+                class="w-64 h-64 rounded-lg shadow-lg mx-auto transform hover:scale-105 transition duration-300">
+        <img src="img/pink-floyd.webp" alt="Álbum 3" 
+                class="w-64 h-64 rounded-lg shadow-lg mx-auto transform hover:scale-105 transition duration-300">
+        <img src="img/Pink2BFloyd-1.jpg" alt="Álbum 4" 
+                class="w-64 h-64 rounded-lg shadow-lg mx-auto transform hover:scale-105 transition duration-300">
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-pink-600 p-6 text-center shadow-lg">
+    <p class="text-lg">&copy; 2025 Página de Pink Floyd por Giovanna Valle</p>
+</footer>
+</body>
+</html>
