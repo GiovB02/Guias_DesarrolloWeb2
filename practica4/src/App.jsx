@@ -7,12 +7,18 @@ import { ExpenseList } from "./components/ExpenseList";
 import { FilterByCategory } from "./components/FilterByCategory";
 
 function App() {
-  const state = useContext(BudgetStateContext); // ✅ Ahora está antes de usarlo
+  const state = useContext(BudgetStateContext);
   const isValidBudget = state.budget > 0;
 
   useEffect(() => {
     localStorage.setItem('budget', state.budget.toString());
-  }, [state.budget]); // ✅ Ahora `useEffect` está dentro del componente
+  }, [state.budget])
+
+  useEffect(() => {
+    localStorage.setItem('expenses', JSON.stringify(state.expenses))
+  }, [state.expenses])
+
+  
 
   return (
     <>

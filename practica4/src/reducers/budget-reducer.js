@@ -20,6 +20,10 @@ export const budgetReducer = (state, action) => {
 
     switch (action.type) {
         case "add-budget":
+            const totalExpenses = state.expenses.reduce((total, exp) => total + exp.amount, 0) + action.payload.expense.amount;
+            if (totalExpenses > state.budget) {
+        return { ...state, errorMessage: "No puedes gastar más de lo que tienes en el presupuesto." };
+    }
             return { ...state, budget: action.payload.budget };
         case "show-modal":
             return { ...state, modal: true };
@@ -47,12 +51,21 @@ export const budgetReducer = (state, action) => {
             modal: false,
             editingId: "",
             };
-            case "add-filter-category":
+        case "add-filter-category":
                 return {
                     ...state,
                     currentCategory: action.payload
                 };
-            
+        case "reset-app":
+            return {
+                budget: 0, // Se reinicia el presupuesto
+                modal: false, // Se cierra cualquier modal abierto
+                expenses: [], // Se eliminan los gastos
+                editingId: "", 
+                currentCategory: "",
+            };
+
+                    
         default:
             return state;
         }
