@@ -1,12 +1,24 @@
+const initialBudget =()=>{
+    const localStorageBudget = localStorage.getItem("budget");
+    return localStorageBudget? parseFloat(localStorageBudget):0;
+}
+
+const localStorageExpenses=()=>{
+    const localStorageExpenses = localStorage.getItem("expenses");
+    return localStorageExpenses? JSON.parse(localStorageExpenses):[];
+}
+
 export const initialState = {
-    budget: 0,
+    budget: initialBudget(),
     modal: false,
-    expenses: [],
+    expenses: localStorageExpenses(),
     editingId: "",
-    };
-    
-    export const budgetReducer = (state, action) => {
-        switch (action.type) {
+    currentCategory: "",
+};
+
+export const budgetReducer = (state, action) => {
+
+    switch (action.type) {
         case "add-budget":
             return { ...state, budget: action.payload.budget };
         case "show-modal":
@@ -30,10 +42,17 @@ export const initialState = {
             return {
             ...state,
             expenses: state.expenses.map(expense =>
-                expense.id === action.payload.expense.id ? action.payload.expense : expense),
+                expense.id === action.payload.expense.id ? action.payload.expense : expense
+            ),
             modal: false,
             editingId: "",
             };
+            case "add-filter-category":
+                return {
+                    ...state,
+                    currentCategory: action.payload
+                };
+            
         default:
             return state;
         }

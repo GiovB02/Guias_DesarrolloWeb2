@@ -16,3 +16,4 @@ export const BudgetProvider=({children})=>{
         </BudgetStateContext.Provider>
     )
 }
+

@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
+import { BudgetDispatchContext, BudgetStateContext } from '../context/BudgetContext';
 import { categories } from '../data/categories';
 import DatePicker from 'react-date-picker';
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
-import { BudgetDispatchContext, BudgetStateContext } from '../context/BudgetContext';
 import ErrorMessage from './ErrorMessage';
 
 export const ExpenseForm = () => {
@@ -47,9 +47,9 @@ export const ExpenseForm = () => {
         return;
         }
         if (state.editingId) {
-        dispatch({ type: "update-expense", payload: { expense: { id: state.editingId, ...expense } } });
+        dispatch({ type: 'update-expense', payload: { expense } });
         } else {
-        dispatch({ type: "add-expense", payload: { expense: { ...expense, id: new Date().getTime() } } });
+        dispatch({ type: 'add-expense', payload: { expense: { ...expense, id: new Date().getTime() } } });
         }
         setExpense({
         expenseName: "",
@@ -130,4 +130,4 @@ export const ExpenseForm = () => {
         />
         </form>
     );
-    };
+};
