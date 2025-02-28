@@ -20,7 +20,7 @@ export const budgetReducer = (state, action) => {
 
     switch (action.type) {
         case "add-budget":
-            const totalExpenses = state.expenses.reduce((total, exp) => total + exp.amount, 0) + action.payload.expense.amount;
+            const totalExpenses = state.expenses.reduce((total, exp) => total + exp.amount, 0);
             if (totalExpenses > state.budget) {
         return { ...state, errorMessage: "No puedes gastar más de lo que tienes en el presupuesto." };
     }

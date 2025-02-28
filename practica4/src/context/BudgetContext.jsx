@@ -1,4 +1,4 @@
-import { createContext, useReducer, useContext } from "react"
+import { createContext, useReducer} from "react"
 import { budgetReducer, initialState } from "../reducers/budget-reducer"
 
 export const BudgetStateContext=createContext()
@@ -16,4 +16,3 @@ export const BudgetProvider=({children})=>{
         </BudgetStateContext.Provider>
     )
 }
-
